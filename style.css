@@ -70,14 +70,11 @@ label {
   opacity: 1;
   height: 35vh;
 }
-.ac:checked ~ label .img-plus {
-  /* transform: rotate(45deg); */
-  /* opacity: 1; */
-}
+
 .ac:checked + label .ac-label {
   color: black;
 }
-
+/* Для устройств где не работает hover-эффект */
 @media  screen and (any-hover: hover) {
   .main-cont:hover .img-plus {
     opacity: 1;
