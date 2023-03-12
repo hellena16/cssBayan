@@ -1,0 +1,114 @@
+body {
+  background-color: none;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.main-cont {
+  width: 90%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.5rem;
+  background-color: rgb(221, 220, 220);
+  border-radius: 1rem;
+}
+
+.ac-part,
+h1 {
+  width: inherit;
+}
+.ac {
+  display: none;
+}
+label {
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-top: 0.3rem solid rgba(136, 144, 151, 0.2);
+  background-size: 1.2rem;
+  color: blue;
+}
+.ac-label {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ac-body {
+  display: flex;
+  justify-content: center;
+}
+.img-plus {
+  transition: all 0.3s ease 0s;
+  transform: rotate(45deg);
+  opacity: 0;
+  width: 1rem;
+}
+.ac-body img {
+  height: 0;
+  transition: all 0.5s linear;
+}
+.mem {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.ac:checked .ac-body img {
+  opacity: 1;
+  height: 35vh;
+}
+.ac:checked ~ label .ac-body img {
+  opacity: 1;
+  height: 35vh;
+}
+
+.ac:checked + label .ac-label {
+  color: black;
+}
+/* Для устройств где не работает hover-эффект */
+@media  screen and (any-hover: hover) {
+  .main-cont:hover .img-plus {
+    opacity: 1;
+  }
+  .main-cont:hover .ac-label {
+    color: black;
+  }
+  .ac-part:hover .ac-label {
+    color: black;
+  }
+  .ac-part:hover .ac-body img {
+    height: 35vh;
+    opacity: 1;
+    visibility: visible;
+  }
+  .ac-part:hover .img-plus {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 1000px){
+  body {
+    background-color: rgb(221, 220, 220);
+  }
+  .main-cont {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 470px) {
+  body {
+    background-color: rgb(221, 220, 220);
+  }
+  .main-cont {
+    font-size: 1rem;
+  }
+}
